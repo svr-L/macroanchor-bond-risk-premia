@@ -1,10 +1,12 @@
-Recommended notebook order:
+Publication-era recommended inspection/execution order
 
-1. notebooks/00_capstone_overview.ipynb
-2. notebooks/01_affine_short_rate_us.ipynb
-3. notebooks/02_us_reconciliation_ladder.ipynb
-4. notebooks/03_us_row_by_row_audit.ipynb
-5. notebooks/04_g10_panel_replication.ipynb
-6. notebooks/05_g10_panel_us_diagnostics.ipynb
-7. extensions/06_taa_overlay_diagnostics.ipynb
-8. extensions/07_curve_rv_extension_v1.ipynb
+0. python scripts/verify_release.py                  [checks provenance + notebook validity]
+1. python scripts/stage_frozen_inputs.py --dest notebooks
+2. notebooks/08_macroanchor_bond_risk_premia.ipynb [US; raw GSW still external]
+3. notebooks/09_g10_panel_dependence_and_global_factors.ipynb
+4. notebooks/09b_panel_carry_value_controls_executed.ipynb  [final executed; derived G10 included]
+5. notebooks/09c_us_regime_intercepts_correction.ipynb      [final executed; derived G10 included]
+6. notebooks/10_vintage_costs_crosssection_executed.ipynb    [final executed; raw ALFRED still external]
+
+Historical sources retained: notebooks/00 through 05, extensions/06 and 07.
+Full paper: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7684104
