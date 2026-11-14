@@ -1,10 +1,10 @@
-# Extensions
+# Legacy exploratory extensions
 
-Exploratory notebooks that extend the macro-anchor term-premium signal beyond the core paper.
+These notebooks document **earlier research branches**. Their results have not been updated or promoted to the latest portfolio research state; refer to the separate descendant repositories for the more mature work.
 
-| Notebook | Role |
-|---|---|
-| `06_taa_overlay_diagnostics.ipynb` | Broader tactical allocation / overlay / scenario diagnostics |
-| `07_curve_rv_extension_v1.ipynb` | First yield-curve relative-value extension across tenors |
+| Historical notebook | Research question | Current independent line |
+|---|---|---|
+| `06_taa_overlay_diagnostics.ipynb` | Original tactical-allocation / regime / overlay experiments | Historical diagnostic; not the current sparse allocation result |
+| `07_curve_rv_extension_v1.ipynb` | Initial within-curve MacroAnchor RV exploration | [Intra-curve RV](https://github.com/svr-L/macroanchor-intra-curve-relative-value) supersedes this early experiment |
 
-Current interpretation of the curve-RV notebook: the naïve top/bottom ranking is not enough; DV01- and PC1-neutral versions show smaller but more genuine curve-relative behavior. A stronger V2 should use sparse greedy tenor selection with conditional DV01/yield-shock risk.
+Other MacroAnchor descendants: [sparse curve allocation](https://github.com/svr-L/macroanchor-sparse-curve-allocation) explores **non-neutral** tenor selection; [inter-curve RV](https://github.com/svr-L/macroanchor-inter-curve-relative-value) explores **between-country** sovereign curve comparisons. These have distinct objective functions, constraints and claims. They are not interchangeable versions of the legacy notebooks.
