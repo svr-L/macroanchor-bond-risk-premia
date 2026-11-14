@@ -1,27 +1,21 @@
-# Roadmap
+# Research status and roadmap — 14 November 2026
 
-## Completed
+## Parent paper: finalized, full executed source recovered
 
-- Macro-anchor construction for US rates.
-- Hull--White short-rate model with moving macro central tendency.
-- Model-implied term-premium signal by tenor.
-- US out-of-sample horse race.
-- G10 panel replication.
-- US reconciliation ladder and row-by-row data audit.
-- Working paper draft.
-- Exploratory curve relative-value extension.
+[The Macro Anchor as a Short-Rate Central Tendency: Bond Risk Premia and an Empirical-Design Decomposition](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7684104) is the frozen October 2026 working paper. Its final source coverage now includes publication-era US 08, panel 09, **executed 09b/09c and 10**, matching frozen US/G10 derived inputs, final control tables, scripts and vector figures.
 
-## Near-term improvements
+**Remaining external input gap:** the exact raw GSW `feds200628.csv` and ALFRED `CPIAUCSL_all_vintages.csv` original upload were not in the recovered final master ZIP. Do not claim full raw-data replay of those branches; see [replication guide](replication_guide.md).
 
-1. Add a compact technical appendix with formulas for the affine yield, exact excess-return construction, duration approximation, OOS R², and Clark--West test.
-2. Add more formal panel robustness: sign test, leave-one-country-out, short-sample exclusions, and block/date bootstrap.
-3. Add cost-aware economic value tables for duration sizing and overlays.
-4. Improve real-time treatment of inflation data, ideally with vintage data.
-5. Refactor common code into `src/` for cleaner paper replication.
+## Maintenance only (not new science)
 
-## Research extensions
+1. If the original ALFRED matrix and raw GSW file are recovered, verify their provenance / source hashes and integrate them under an explicit data-redistribution decision. Do not replace them with unverified revised versions.
+2. If the original code needs portable execution, add **wrappers or environment instructions** without silently altering the frozen executed notebooks.
+3. Keep SSRN as the sole distribution source of the full paper; keep descendant research independent.
 
-- Sparse greedy curve allocation using macro-anchor term-premium signals.
-- Conditional DV01 / yield-shock risk budgeting.
-- Curve relative value with PC-neutral and carry-aware constraints.
-- Equity volatility relative-value analogue using implied variance, expected realized variance, and variance risk premia.
+## Independent descendants
+
+- [Sparse Curve Allocation](https://github.com/svr-L/macroanchor-sparse-curve-allocation) — sparse non-neutral tenor allocation based on the parent signal.
+- [Intra-Curve Relative Value](https://github.com/svr-L/macroanchor-intra-curve-relative-value) — same-country cross-tenor DV01-neutral research.
+- [Inter-Curve Relative Value](https://github.com/svr-L/macroanchor-inter-curve-relative-value) — cross-country sovereign residual RV with credit-risk diagnostics.
+
+These are not alternative versions of the 2026 parent empirical forecasting paper. They should not rewrite its validated historical conclusions.

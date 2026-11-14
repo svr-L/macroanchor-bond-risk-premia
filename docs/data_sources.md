@@ -1,33 +1,20 @@
-# Data sources
+# Data sources and provenance
 
-The notebooks use public macro and rates data.
+The parent paper is on [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7684104). This release now includes the *final derived frozen US and G10 input snapshots*, unlike the earlier public repository, but it is not a complete archive of all **raw** inputs.
 
-## United States
+## Included hash-verified derived data
 
-Typical series include:
+| File | Location | SHA-256 |
+|---|---|---|
+| US canonical monthly panel | `data/frozen/paper_config_monthly_panel.csv` | `67ed3093d17cf5ed849a8cfa3fa95ac5fb2c1f47d58a69110f96a366a1fbd7f5` |
+| G10 model-ready panel | `data/frozen/g10_panel_model_objects.csv` | `1628c4eaff487f6d87cc93fe62c7af909850d9ceedf448d9d8321f8b8477bbf6` |
 
-- Treasury constant-maturity yields: `GS1`, `GS2`, `GS3`, `GS5`, `GS7`, `GS10`;
-- 3-month T-bill / front-end rate proxy: `TB3MS`;
-- CPI: `CPIAUCSL`;
-- external term-premium benchmark where available: Kim--Wright 10Y term premium series.
+The hashes match the **original final personal master** of 18 October 2026, not a fresh download. Snapshot availability facilitates checks of 09b, 09c and parts of 10.
 
-## G10 panel
+## Raw sources and remaining limitations
 
-The panel notebooks use OECD MEI-style series exposed through FRED where available, including:
+- US yields: FRED Treasury constant maturity and 3-month bill, Gürkaynak–Sack–Wright Fed zero-coupon curve. Historical CPI: CPIAUCSL (FRED/ALFRED). The canonical raw GSW `feds200628.csv` expected SHA-256 is `c3541ab54e054c0bcc3c17bbe038a3129da2c26486ef3c255e2378d7d63aa9c4`; **not supplied** in recovered archive.
+- Full-vintage CPI: final executed 10 uses ALFRED `CPIAUCSL_all_vintages.csv` with 669 vintage releases through September 11, 2026. Its upload was **not hashed by that notebook** and is **not included** here. Early notebook 01 instead uses a lag proxy — it does not reproduce full as-of CPI history.
+- International panel: OECD Main Economic Indicators via FRED; nine usable countries (Japan excluded due to insufficient usable forecast history). Australia and New Zealand rely on quarterly CPI with release timing; country-level returns are duration approximations. The panel is based on **revised historical macro data**, hence pseudo-OOS.
 
-- 10-year government bond yields;
-- 3-month interbank or money-market rates;
-- CPI indices.
-
-The panel target uses a duration-approximated 10Y excess-return proxy because full foreign yield curves are not uniformly available.
-
-## Caching and reproducibility
-
-Some notebooks cache downloaded series under `data/cache/` or notebook-local cache folders. Raw and cached data are not committed to Git. Re-running the notebooks should regenerate the required inputs from public sources, subject to source availability.
-
-## Data caveats
-
-- OECD and FRED series may be revised.
-- The CPI publication-lag test is a real-time proxy, not a full vintage-data exercise.
-- Funding-rate choice matters materially for the audit. The project reports the effect rather than hiding it.
-- Cross-country samples have heterogeneous start dates and are not independent observations.
+Live public-series downloads can lead to different values. No current download should silently replace a frozen source, and no hash for the original ALFRED upload has been fabricated.
