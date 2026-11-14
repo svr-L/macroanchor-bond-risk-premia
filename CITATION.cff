@@ -5,8 +5,8 @@ authors:
   - family-names: "Lauriola"
     given-names: "Saverio"
 year: 2026
-version: "0.2.0"
+version: "0.3.0"
 repository-code: "https://github.com/svr-L/macroanchor-bond-risk-premia"
 url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7684104"
-abstract: "Research notebooks on a moving macro short-rate central tendency, bond-return predictability, external validation and empirical-design sensitivity. The related working paper is hosted on SSRN."
+abstract: "Research notebooks, executed final-paper robustness checks, hash-verified frozen US/G10 derived inputs, and supplementary scientific outputs on a moving macro short-rate central tendency and bond-return predictability. The related working paper is hosted on SSRN."
 license: MIT

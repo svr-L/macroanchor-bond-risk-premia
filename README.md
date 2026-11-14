@@ -30,7 +30,7 @@ The two EWMAs have half-lives of 36 and 120 months. This is a transparent statis
 
 ## Main findings from the working paper
 
-The values below are **from the final October 2026 manuscript** linked above. The notebook subset distributed in this repository does **not** independently reproduce every final paper table; see the [evidence-coverage audit](docs/replication_guide.md).
+The values below are **from the final October 2026 manuscript** linked above. The original **executed final-paper notebooks 09b, 09c, and 10**, hash-matched frozen US and G10 CSV inputs, controls scripts and final output tables are included here. **The original ALFRED CPI vintage matrix and frozen GSW source file are not**; see the [evidence-coverage audit](docs/replication_guide.md).
 
 | Research test | Paper result and interpretation |
 |---|---|
@@ -46,22 +46,22 @@ The values below are **from the final October 2026 manuscript** linked above. Th
 
 ## Repository contents and evidence status
 
-This repository has **two layers**. The archived exploratory notebooks document how the project evolved; the later 08–09 notebooks add a subset of publication-era diagnostics. A number of final-manuscript analyses were executed separately and **are not present in this uploaded repository snapshot**. The numbers in the table above are sourced to the [paper on SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7684104), not attributed to absent code.
+**Publication-era scientific source is now included, not only described.** The notebook numbering retains the research lineage. The original final-paper 09b/09c/10 notebooks are included **byte-for-byte** from the author-identifiable final research master of 18 October 2026, with their archived execution outputs. The earlier 08/09 public notebooks retain their own recorded outputs; their analytical code matches the corresponding final-master sources (08 also contains a Colab upload helper cell).
 
 | Path | Scope |
 |---|---|
-| [`notebooks/00_capstone_overview.ipynb`](notebooks/00_capstone_overview.ipynb) | Historical research map: original rates/TAA exploration and model lineage, not the final paper's replication entrypoint. |
-| [`notebooks/01_affine_short_rate_us.ipynb`](notebooks/01_affine_short_rate_us.ipynb) | US short-rate model, affine yields and early diagnostics; includes a **release-lag proxy**, not the final ALFRED full-vintage study. |
-| [`notebooks/02_us_reconciliation_ladder.ipynb`](notebooks/02_us_reconciliation_ladder.ipynb) | Reconciliation of different US return-target constructions and common-window choices. |
-| [`notebooks/03_us_row_by_row_audit.ipynb`](notebooks/03_us_row_by_row_audit.ipynb) | Month-by-month checks of the US versus G10 panel input/target definitions. |
-| [`notebooks/04_g10_panel_replication.ipynb`](notebooks/04_g10_panel_replication.ipynb) | Early international replication, using revised data and approximate 10Y returns. |
-| [`notebooks/05_g10_panel_us_diagnostics.ipynb`](notebooks/05_g10_panel_us_diagnostics.ipynb) | US panel row diagnostics and sample-construction differences. |
-| [`notebooks/08_macroanchor_bond_risk_premia.ipynb`](notebooks/08_macroanchor_bond_risk_premia.ipynb) | Publication-era US robustness, curve/return construction, forecasting and benchmark comparisons; requires archived external inputs. |
-| [`notebooks/09_g10_panel_dependence_and_global_factors.ipynb`](notebooks/09_g10_panel_dependence_and_global_factors.ipynb) | Publication-era G10 dependence, fixed effects, factor and cross-sectional tests; requires archived external inputs. |
-| [`extensions/06_taa_overlay_diagnostics.ipynb`](extensions/06_taa_overlay_diagnostics.ipynb) | Earlier tactical-allocation/synthetic diagnostics, not the latest separate allocation study. |
-| [`extensions/07_curve_rv_extension_v1.ipynb`](extensions/07_curve_rv_extension_v1.ipynb) | Early within-curve RV exploration; **not** the current stand-alone intra-curve project. |
+| [`notebooks/00`–`05`](notebooks/README.md) | Historical US short-rate/target reconciliation and G10 development; not replacements for the final executed analyses. |
+| [`notebooks/08_macroanchor_bond_risk_premia.ipynb`](notebooks/08_macroanchor_bond_risk_premia.ipynb) | Paper-era US model/GSW zero-coupon/benchmark/nested forecast tests. **Exact GSW raw input is still needed** for its GSW branch. |
+| [`notebooks/09_g10_panel_dependence_and_global_factors.ipynb`](notebooks/09_g10_panel_dependence_and_global_factors.ipynb) | Paper-era G10 panel, dependence and global-factor regressions. |
+| [`notebooks/09b_panel_carry_value_controls_executed.ipynb`](notebooks/09b_panel_carry_value_controls_executed.ipynb) | **Final executed** G10 local carry/value controls; archived outputs present. |
+| [`notebooks/09c_us_regime_intercepts_correction.ipynb`](notebooks/09c_us_regime_intercepts_correction.ipynb) | **Final executed** US regime/intercept correction; archived outputs present. |
+| [`notebooks/10_vintage_costs_crosssection_executed.ipynb`](notebooks/10_vintage_costs_crosssection_executed.ipynb) | **Final executed** ALFRED real-time, US economic-value and cross-country sort analyses; archived outputs present. Full vintage **re-execution** additionally needs the original ALFRED CPI file. |
+| [`data/frozen/`](data/frozen/) | Hash-matched **final frozen US and G10 derived inputs**. |
+| [`results/final_paper/`](results/final_paper/) | Final control tables and exported vector figures; no manuscript PDF or TeX. |
+| [`scripts/`](scripts/) | Original panel-control and figure-production scripts, plus input staging and validation. |
+| [`extensions/`](extensions/README.md) | Legacy exploratory TAA / curve-RV notebooks; not the mature descendant projects. |
 
-**Not in this snapshot:** the final executed `09b` carry/value controls, `09c` regime/intercept correction, `10` full-ALFRED-vintage/economic-value/cross-country-sort notebook, and their complete hash-pinned input bundle. They are referenced in the manuscript but have **not been fabricated or reconstructed** here. See [replication guide](docs/replication_guide.md).
+**Provenance:** `09b` SHA-256 `90aa6e5c…`, `09c` `4f98a9fd…`, `10` `5dd9475b…` (full digests in [release audit](docs/repo_audit_2026-11-14.md)). The two frozen CSV input SHA-256 values match the final manuscript. Neither raw `feds200628.csv` nor the **unhashed original** `CPIAUCSL_all_vintages.csv` is part of this delivery; results requiring those files are preserved **as executed notebook outputs**, not newly re-executed or claimed fully independently reproducible. See the [replication guide](docs/replication_guide.md).
 
 ## Related repositories
 
