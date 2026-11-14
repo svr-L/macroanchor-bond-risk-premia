@@ -1,11 +1,12 @@
 cff-version: 1.2.0
-message: "If you use this research code or paper, please cite it as below."
-title: "Macro-Anchored Bond Risk Premia"
+message: "For the scientific results, please cite the 2026 SSRN working paper; for the public code, cite this repository."
+title: "Macro-Anchored Bond Risk Premia: Research Code and Empirical Audits"
 authors:
   - family-names: "Lauriola"
     given-names: "Saverio"
 year: 2026
-version: "0.1.0"
-repository-code: "https://github.com/<your-username>/macro-anchored-bond-risk-premia"
-abstract: "A reproducible research stack on macro-anchored affine short-rate signals, bond risk premia, out-of-sample discipline, G10 replication, and specification audits."
+version: "0.2.0"
+repository-code: "https://github.com/svr-L/macroanchor-bond-risk-premia"
+url: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7684104"
+abstract: "Research notebooks on a moving macro short-rate central tendency, bond-return predictability, external validation and empirical-design sensitivity. The related working paper is hosted on SSRN."
 license: MIT
