@@ -5,8 +5,6 @@
 
 **[Read or download the working paper on SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7684104)** · [Research methodology](docs/methodology.md) · [Replication and evidence coverage](docs/replication_guide.md) · [Research lineage](#related-repositories)
 
-**Paper-hosting policy:** The manuscript is distributed **on SSRN**, not in this repository. This repository contains research notebooks and documentation; the PDF and LaTeX manuscript are deliberately not mirrored here.
-
 ## Research question and economic mechanism
 
 Can a slow-moving nominal macro anchor — a proxy for the neutral real short rate plus trend inflation — help forecast sovereign-bond excess returns? The distinction is **how the macro state is used**, not simply whether it is correlated with long yields.
@@ -99,7 +97,7 @@ For notebook-specific prerequisites and an honest description of **which results
 - Public primary sources include FRED, ALFRED, Federal Reserve Gürkaynak–Sack–Wright Treasury curves and OECD Main Economic Indicators; market curves and published revised series are not equivalent to real-time macro vintages.
 - The working paper documents frozen snapshots, code and hashes. Only a **partial historical/public notebook collection** is present here; do not interpret that as a complete independent replication package for the final manuscript.
 - The original scientific result is **frozen**. Future upgrades to portfolio construction, term-premium models or multiverse methods belong in separate research lines, with explicit versioning; they do not silently replace the October 2026 results.
-- No manuscript PDF or LaTeX source is distributed in this repository. **[The latest paper is hosted on SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7684104).**
+- **[The latest paper is hosted on SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7684104).**
 
 ## Disclaimer
 
